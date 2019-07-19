@@ -4,7 +4,7 @@ import Card from '../../components/Card/Card'
 
 function CardContainer(props) {
 
-  const cards = props.ideas.map(idea => <Card idea={idea}/>)
+  const cards = props.ideas.map((idea, i) => <Card idea={idea} key={i}/>)
   console.log(props)
   return (
     <div>
