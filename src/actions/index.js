@@ -3,3 +3,7 @@ export const addIdea = ideas => ({
   payload: ideas
 })
 
+export const addRes = reservations => ({
+  type: 'ADD_RES',
+  payload: reservations
+})
