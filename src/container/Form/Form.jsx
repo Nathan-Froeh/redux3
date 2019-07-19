@@ -2,7 +2,8 @@
 
 import {connect} from 'react-redux';
 import React, { Component } from 'react';
-import {addIdea} from '../../actions/index'
+import {addIdea} from '../../actions/index';
+import Call from '../Fetch/Fetch';
 
 class Form extends Component {
   constructor(props) {
@@ -10,6 +11,11 @@ class Form extends Component {
     this.state = {
       idea: ''
     }
+  }
+
+  componentDidMount() {
+    Call.getReservations()
+      .then(res => console.log(res))
   }
 
   handleChange = (e) => {

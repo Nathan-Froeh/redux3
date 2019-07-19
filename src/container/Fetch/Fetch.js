@@ -4,7 +4,7 @@ const Call = {
     return fetch('http://localhost:3001/api/v1/reservations')
       .then((response) => {
         if(response.ok) {
-          console.log(response.json())
+          return response.json()
         }
       })
       .catch(error => console.log(error))
@@ -18,7 +18,11 @@ const Call = {
       'Content-Type': 'application/json'
     }
   })
-    .then(response => console.log(response.json()))
+  .then((response) => {
+    if(response.ok) {
+      return response.json()
+    }
+  })
     .catch(error => console.log(error))
 
   }
