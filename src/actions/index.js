@@ -1,5 +1,5 @@
-export const addIdea = idea => ({
+export const addIdea = ideas => ({
   type: 'ADD_IDEA',
-  payload: idea
+  payload: ideas
 })
 
