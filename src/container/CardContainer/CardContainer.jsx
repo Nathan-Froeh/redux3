@@ -6,8 +6,13 @@ function CardContainer(props) {
 
 
 
-  const cards = props.ideas.map((idea, i) => <Card idea={idea} key={i}/>)
-  console.log(props)
+  const cards = props.reservations.map((res, i) => 
+  (
+    <Card 
+    idea={res} 
+    key={i}
+  />))
+
   return (
     <div>
       {cards}
@@ -16,7 +21,8 @@ function CardContainer(props) {
 }
 
 const mapStateToProps = state => ({
-  ideas: state.ideas
+  ideas: state.ideas,
+  reservations: state.reservations
 })
 
 export default connect(mapStateToProps)(CardContainer)
