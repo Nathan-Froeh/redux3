@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 import React, { Component } from 'react';
 import {addIdea} from '../../actions/index';
 import Call from '../Fetch/Fetch';
+import {addReservations} from '../../reducers/addReservation'
 
 class Form extends Component {
   constructor(props) {
@@ -43,7 +44,8 @@ class Form extends Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-  addIdea: idea => dispatch(addIdea(idea))
+  addIdea: idea => dispatch(addIdea(idea)),
+  addReservations: reservation => dispatch(addReservations(reservation))
 })
 
 export default connect(null, mapDispatchToProps)(Form)
